@@ -1,0 +1,16 @@
+.dart_tool/
+.idea/
+.vscode/
+android/
+branches/
+build/
+hooks/
+info/
+ios/
+linux/
+macos/
+objects/
+refs/
+test/
+web/
+windows/
