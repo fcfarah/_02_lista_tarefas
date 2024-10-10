@@ -21,10 +21,24 @@ class TodoListPage extends StatefulWidget {
 }
 
 class _TodoListPageState extends State<TodoListPage> {
-  List<Todo> todos = [];
-
   final TextEditingController todoController = TextEditingController();
   final TodoRepository todoRepository = TodoRepository();
+
+  List<Todo> todos = [];
+
+  Todo? deletedTodo;
+  int? deletedTodoPos;
+
+  @override
+  void initState() {
+    super.initState();
+
+    todoRepository.getTodoList().then((value) {
+      setState(() {
+        todos = value;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
